@@ -11,6 +11,6 @@ Usage
 Params
 ======
 
-Delimiter: words or chars. Defaults to chars.
-Limit: Defaults to 150.
-Ending: Defaults to an empty string.
+- Delimiter: words or chars. Defaults to chars.
+- Limit: Defaults to 150.
+- Ending: Defaults to an empty string.
