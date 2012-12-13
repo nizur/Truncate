@@ -1,0 +1,45 @@
+<?php
+namespace Blocks;
+
+class TruncatePlugin extends BasePlugin
+{
+
+	/* --------------------------------------------------------------
+	 * PLUGIN INFO
+	 * ------------------------------------------------------------ */
+
+	public function getName()
+	{
+		return Blocks::t('Truncate (Beta)');
+	}
+
+	public function getVersion()
+	{
+		return '0.1';
+	}
+
+	public function getDeveloper()
+	{
+		return 'Chris Ruzin';
+	}
+
+	public function getDeveloperUrl()
+	{
+		return 'http://chrisruzin.net';
+	}
+
+	/* --------------------------------------------------------------
+	 * HOOKS
+	 * ------------------------------------------------------------ */
+
+	/**
+	 * Load the TruncateTwigExtension class from our ./twigextensions
+	 * directory and return the extension into the template layer
+	 */
+	public function hookAddTwigExtension()
+	{
+		Blocks::import('plugins.truncate.twigextensions.TruncateTwigExtension');
+		return new TruncateTwigExtension();
+	}
+
+}
