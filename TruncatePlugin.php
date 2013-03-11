@@ -1,5 +1,5 @@
 <?php
-namespace Blocks;
+namespace Craft;
 
 class TruncatePlugin extends BasePlugin
 {
@@ -10,7 +10,7 @@ class TruncatePlugin extends BasePlugin
 
 	public function getName()
 	{
-		return Blocks::t('Truncate (Beta)');
+		return Craft::t('Truncate (Beta)');
 	}
 
 	public function getVersion()
@@ -38,7 +38,7 @@ class TruncatePlugin extends BasePlugin
 	 */
 	public function hookAddTwigExtension()
 	{
-		Blocks::import('plugins.truncate.twigextensions.TruncateTwigExtension');
+		Craft::import('plugins.truncate.twigextensions.TruncateTwigExtension');
 		return new TruncateTwigExtension();
 	}
 

@@ -1,7 +1,7 @@
 Truncate
 ========
 
-A simple Blocks CMS plugin/Twig filter.
+A simple Craft CMS plugin/Twig filter.
 
 Usage
 =====

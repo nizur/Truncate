@@ -1,12 +1,12 @@
 <?php
-namespace Blocks;
+namespace Craft;
 
 class TruncateTwigExtension extends \Twig_Extension
 {
 
 	public function getName()
 	{
-		return Blocks::t('Truncate (Beta)');
+		return Craft::t('Truncate');
 	}
 
 	public function getFilters()
@@ -22,7 +22,7 @@ class TruncateTwigExtension extends \Twig_Extension
 		$mb_ok = function_exists('mb_get_info');
 
 		// Get our Twig charset
-		$charset = blx()->templates->getTwig()->getCharset();
+		$charset = craft()->templates->getTwig()->getCharset();
 
 		// Work with the text
 		switch ($delimiter)
