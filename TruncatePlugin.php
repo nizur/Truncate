@@ -10,7 +10,7 @@ class TruncatePlugin extends BasePlugin
 
 	public function getName()
 	{
-		return Craft::t('Truncate (Beta)');
+		return Craft::t('Truncate');
 	}
 
 	public function getVersion()
