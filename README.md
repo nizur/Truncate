@@ -5,7 +5,7 @@ A simple Craft CMS plugin/Twig filter.
 
 Usage
 =====
-```twig
+```php
 {{ entry.body | truncate('words', '150', '...') }}
 ```
 
@@ -25,7 +25,7 @@ The native Twig filters split, join, and slice can be used to achieve a similar 
 - [join](http://twig.sensiolabs.org/doc/filters/join.html)
 - [split](http://twig.sensiolabs.org/doc/filters/split.html)
 
-```twig
+```php
 {% set words = "these are words"|split(" ")|slice(1, 2)|join(" ") %}  
 {{ words }}
 ```
