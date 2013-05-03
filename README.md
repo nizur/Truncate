@@ -20,9 +20,9 @@ Note
 
 The native Twig filters split, join, and slice can be used to achieve a similar result:
 
-http://twig.sensiolabs.org/doc/filters/slice.html
-http://twig.sensiolabs.org/doc/filters/join.html
-http://twig.sensiolabs.org/doc/filters/split.html
+- [slice](http://twig.sensiolabs.org/doc/filters/slice.html)
+- [join](http://twig.sensiolabs.org/doc/filters/join.html)
+- [split](http://twig.sensiolabs.org/doc/filters/split.html)
 
 {% set words = "these are words"|split(" ")|slice(1, 2)|join(" ") %}
 
