@@ -24,5 +24,5 @@ The native Twig filters split, join, and slice can be used to achieve a similar 
 - [join](http://twig.sensiolabs.org/doc/filters/join.html)
 - [split](http://twig.sensiolabs.org/doc/filters/split.html)
 
-    {% set words = "these are words"|split(" ")|slice(1, 2)|join(" ") %}
+    {% set words = "these are words"|split(" ")|slice(1, 2)|join(" ") %}  
     {{ words }}
