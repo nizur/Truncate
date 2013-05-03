@@ -14,3 +14,16 @@ Params
 - Unit: words or chars. Defaults to chars.
 - Limit: Defaults to 150.
 - Ending: Defaults to an empty string.
+
+Note
+====
+
+The native Twig filters split, join, and slice can be used to achieve a similar result:
+
+http://twig.sensiolabs.org/doc/filters/slice.html
+http://twig.sensiolabs.org/doc/filters/join.html
+http://twig.sensiolabs.org/doc/filters/split.html
+
+{% set words = "these are words"|split(" ")|slice(1, 2)|join(" ") %}
+
+{{ words }}
