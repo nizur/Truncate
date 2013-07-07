@@ -37,8 +37,8 @@ class TruncateTwigExtension extends \Twig_Extension
 				if (str_word_count($str, 0) > $limit)
 				{
 					$words = str_word_count($str, 2);
-					$pos	= array_keys($words);
-					$str	= ($mb_ok) ? mb_substr($str, 0, $pos[$limit], $charset) : substr($str, 0, $pos[$limit]);
+					$pos   = array_keys($words);
+					$str   = ($mb_ok) ? mb_substr($str, 0, $pos[$limit], $charset) : substr($str, 0, $pos[$limit]);
 				}
 				break;
 
