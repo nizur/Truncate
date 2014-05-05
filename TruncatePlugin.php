@@ -36,7 +36,7 @@ class TruncatePlugin extends BasePlugin
 	 * Load the TruncateTwigExtension class from our ./twigextensions
 	 * directory and return the extension into the template layer
 	 */
-	public function hookAddTwigExtension()
+	public function addTwigExtension()
 	{
 		Craft::import('plugins.truncate.twigextensions.TruncateTwigExtension');
 		return new TruncateTwigExtension();
