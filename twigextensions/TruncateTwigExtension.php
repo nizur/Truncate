@@ -16,13 +16,18 @@ class TruncateTwigExtension extends \Twig_Extension
 		);
 	}
 
-	public function truncateFilter($str, $delimiter='chars', $limit='150', $ending='')
+	public function truncateFilter($str, $delimiter='chars', $limit='150', $ending='', $stripHTML=false)
 	{
 		// Can we handle multibyte strings?
 		$mb_ok = function_exists('mb_get_info');
 
 		// Get our Twig charset
 		$charset = craft()->templates->getTwig()->getCharset();
+
+		// Strip HTML from the string
+		if ($stripHTML == true) {
+			$str = strip_tags($str);
+		}
 
 		// Work with the text
 		switch ($delimiter)
