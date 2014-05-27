@@ -28,6 +28,8 @@ class TruncateTwigExtension extends \Twig_Extension
 		if ($stripHTML == true) {
 			$str = strip_tags($str);
 		}
+		
+		$trimmed = false;
 
 		// Work with the text
 		switch ($delimiter)
@@ -36,6 +38,7 @@ class TruncateTwigExtension extends \Twig_Extension
 			case 'words':
 				if (str_word_count($str, 0) > $limit)
 				{
+					$trimmed = true;
 					$words = str_word_count($str, 2);
 					$pos   = array_keys($words);
 					$str   = ($mb_ok) ? mb_substr($str, 0, $pos[$limit], $charset) : substr($str, 0, $pos[$limit]);
@@ -44,11 +47,15 @@ class TruncateTwigExtension extends \Twig_Extension
 
 			// Default to counting by chars
 			default:
-				$str = ($mb_ok) ? mb_substr($str, 0, $limit, $charset) : substr($str, 0, $limit);
+				if (strlen($str) > $limit)
+				{
+					$trimmed = true;
+					$str = ($mb_ok) ? mb_substr($str, 0, $limit, $charset) : substr($str, 0, $limit);
+				}
 				break;
 		}
 
-		return rtrim($str).$ending;
+		return $trimmed ? rtrim($str).html_entity_decode($ending) : rtrim($str);
 	}
 
 }
